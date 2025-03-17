@@ -19,9 +19,8 @@ out/$(DEB):
 deb_chroot: ../out/deb.$(DIST).$(ARCH)/raw/$(DEB)
 
 out/$(RPM): out/$(DEB)
+	@echo converting $(RPM)
 	@cd out && fakeroot alien $(DEB) --to-rpm  
-	@mkdir -p out/
-	@echo recovering $(RPM)
 
 ../out/RPM.$(DIST).$(ARCH)/raw/$RPM): out/$(RPM)
 	@mkdir -p ../out/rpm.$(DIST).$(ARCH)/raw
