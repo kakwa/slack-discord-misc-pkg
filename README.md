@@ -2,11 +2,15 @@
 
 # slack-discord-misc-pkg
 
-`rpm`/`deb` repositories for slack and discord, updated daily.
+`rpm`/`deb` repositories for slack, discord and other upstream packages.
 
-url: https://kakwa.github.io/slack-discord-misc-pkg/
+This repo is automatically updated daily.
 
-discord rpm is a basic conversion from the `.deb` using alien.
+Url: https://kakwa.github.io/slack-discord-misc-pkg/
+
+# Notes
+
+* `discord` `.rpm` is a basic conversion from the `.deb` using `alien`.
 
 ## Ubuntu/Debian
 
