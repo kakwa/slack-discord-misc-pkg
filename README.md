@@ -40,7 +40,8 @@ If you are using `RHEL`/`Rocky`/`Fedora`, here how to install the repository:
 
 ```shell
 # Create the repository file
-cat << EOF | ${SUDO} tee /etc/yum.repos.d/slack-discord-misc-pkg.repo
+cat << EOF | ${SUDO} tee -a /etc/dnf/dnf.conf
+
 [slack-discord-misc-pkg]
 name=slack-discord-misc-pkg
 baseurl=https://kakwa.github.io/slack-discord-misc-pkg/rpm.stable.x86_64/
