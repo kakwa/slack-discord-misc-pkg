@@ -2,11 +2,15 @@
 
 # slack-discord-misc-pkg
 
-`rpm`/`deb` repositories for slack and discord, updated daily.
+`rpm`/`deb` repositories for slack, discord and other upstream packages.
 
-url: https://kakwa.github.io/slack-discord-misc-pkg/
+This repo is automatically updated daily.
 
-discord rpm is a basic conversion from the `.deb` using alien.
+Url: https://kakwa.github.io/slack-discord-misc-pkg/
+
+# Notes
+
+* `discord` `.rpm` is a basic conversion from the `.deb` using `alien`.
 
 ## Ubuntu/Debian
 
@@ -36,7 +40,8 @@ If you are using `RHEL`/`Rocky`/`Fedora`, here how to install the repository:
 
 ```shell
 # Create the repository file
-cat << EOF | ${SUDO} tee /etc/yum.repos.d/slack-discord-misc-pkg.repo
+cat << EOF | ${SUDO} tee -a /etc/dnf/dnf.conf
+
 [slack-discord-misc-pkg]
 name=slack-discord-misc-pkg
 baseurl=https://kakwa.github.io/slack-discord-misc-pkg/rpm.stable.x86_64/
