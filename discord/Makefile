@@ -10,6 +10,7 @@ out/$(DEB):
 	@mkdir -p out/
 	@echo recovering $(DEB)
 	@wget --show-progress $(URL_DEB) -O out/$(DEB)
+	@echo "$(URL_DEB) `sha512sum out/$(DEB)`" >out/deb.href
 
 ../out/deb.$(DIST).$(ARCH)/raw/$(DEB): out/$(DEB)
 	@mkdir -p ../out/deb.$(DIST).$(ARCH)/raw
@@ -21,6 +22,7 @@ deb_chroot: ../out/deb.$(DIST).$(ARCH)/raw/$(DEB)
 out/$(RPM): out/$(DEB)
 	@echo converting $(RPM)
 	@cd out && fakeroot alien $(DEB) --to-rpm  
+	@echo "" >out/rpm.href
 
 ../out/RPM.$(DIST).$(ARCH)/raw/$RPM): out/$(RPM)
 	@mkdir -p ../out/rpm.$(DIST).$(ARCH)/raw
