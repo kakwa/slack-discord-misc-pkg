@@ -13,7 +13,7 @@ out/$(DEB):
 	@mkdir -p out/
 	@echo recovering $(DEB)
 	@wget --show-progress $(URL_DEB) -O out/$(DEB)
-	@echo "$(URL_DEB) `sha512sum out/$(DEB)`" >out/deb.href
+	@echo "$(URL_DEB) `sha512sum out/$(DEB) | cut -d' ' -f1`" >out/deb.href
 
 ../out/deb.$(DIST).$(ARCH)/raw/$(DEB): out/$(DEB)
 	@mkdir -p ../out/deb.$(DIST).$(ARCH)/raw
@@ -26,7 +26,7 @@ out/$(RPM):
 	@mkdir -p out/
 	@echo recovering $(RPM)
 	@wget --show-progress $(URL_RPM) -O out/$(RPM)
-	@echo "$(URL_RPM) `sha512sum out/$(RPM)`" >out/rpm.href
+	@echo "$(URL_RPM) `sha512sum out/$(RPM) | cut -d' ' -f1`" >out/rpm.href
 
 ../out/RPM.$(DIST).$(ARCH)/raw/$RPM): out/$(RPM)
 	@mkdir -p ../out/rpm.$(DIST).$(ARCH)/raw
