@@ -106,7 +106,7 @@ jobs:
           path: ./out
           retention-days: 1
 
-  update-merged-href:
+  update-href:
     needs: build
     if: github.ref == 'refs/heads/main' && needs.check_repo.outputs.is_main_repo == 'false' && vars.REPO_WORKFLOW_DISABLED != 'true'
     runs-on: ubuntu-latest
@@ -125,11 +125,11 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-          git add merged.href all.href
-          git diff --cached --quiet || (git commit -m "Update merged.href and all.href" && git push)
+          git add all.href
+          git diff --cached --quiet || (git commit -m "Update all.href" && git push)
 
   deploy:
-    needs: update-merged-href
+    needs: update-href
     if: github.ref == 'refs/heads/main' && needs.check_repo.outputs.is_main_repo == 'false' && vars.REPO_WORKFLOW_DISABLED != 'true'
     environment:
       name: github-pages
