@@ -22,13 +22,18 @@ export SUDO=sudo
 
 # Get your OS version
 # Add the GPG key
-wget -qO - https://kakwa.github.io/slack-discord-misc-pkg/GPG-KEY.pub | \
-    gpg --dearmor | ${SUDO} tee /etc/apt/trusted.gpg.d/slack-discord-misc-pkg.gpg >/dev/null
+curl -s https://kakwa.github.io/slack-discord-misc-pkg/GPG-KEY.pub | \
+    ${SUDO} tee /etc/apt/trusted.gpg.d/slack-discord-misc-pkg.asc >/dev/null
 
 # Add the repository
-echo "deb [arch=amd64] \
-https://kakwa.github.io/slack-discord-misc-pkg/deb.stable.amd64/ \
-stable main" | ${SUDO} tee /etc/apt/sources.list.d/slack-discord-misc-pkg.list
+cat << EOF | ${SUDO} tee /etc/apt/sources.list.d/slack-discord-misc-pkg.sources
+Types: deb
+URIs: https://kakwa.github.io/slack-discord-misc-pkg/deb.stable.amd64/
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /etc/apt/trusted.gpg.d/slack-discord-misc-pkg.asc
+EOF
 
 # update
 apt update
