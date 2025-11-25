@@ -25,6 +25,8 @@ https://github.com/openbao/openbao/releases/download/v2.4.1/bao_2.4.1_linux_amd6
 https://github.com/openbao/openbao/releases/download/v2.4.1/bao_2.4.1_linux_amd64.rpm 30648b555998ce9b9071246a4aeb163686c65cba9c87ad8f83ce7e85f0366c50934de43bba658c55c87e74fd37f8b629bcc6e2962810f2aee958288eade3a725
 https://github.com/openbao/openbao/releases/download/v2.4.3/bao_2.4.3_linux_amd64.deb 18c56cb1fbf12fe96b8f6e9011651f6ba76355572a0534af499399211cd085956b75f270f854114089e3d8dbde728e72d285c6f0a88828c8fe5a2b33feee606d
 https://github.com/openbao/openbao/releases/download/v2.4.3/bao_2.4.3_linux_amd64.rpm 3781c0cb007c5b3ae5113bc2dd88bcad4b7b44c609d08c9bdfbae70047258eefcaa3bd13cca13a83cbe7b49dc2ddf2c21c9fa5228148e781d30260a0c031860a
+https://github.com/openbao/openbao/releases/download/v2.4.4/bao_2.4.4_linux_amd64.deb 2588aa4774bf0a446f38d7dbf12fe71224283f96e21be3b0a6a3f533d4c2b9230d10e90755d0a1c5ef6dbc1a467542e9c9a7c0ccbe2c9ddd3de8fc3f7e0eec9d
+https://github.com/openbao/openbao/releases/download/v2.4.4/bao_2.4.4_linux_amd64.rpm 7012d4434943dec20077aa6b9a012a3ec78dd2054b8d392c6cdee2b366287a879e31a34bf89da11e7751a9b938b881699a9432bfcbc9e2d66e37e065d14761a8
 https://stable.dl2.discordapp.net/apps/linux/0.0.104/discord-0.0.104.deb e71c6a8c2a150a37ffeae61a8d6fc5ed37fd9c34ae597c76e880b8db3fb7043b9b91a16e7f69a0dba9234c3131fafdb892b591b4ff3a1d3437a9c0d9faea571c
 https://stable.dl2.discordapp.net/apps/linux/0.0.105/discord-0.0.105.deb bf91812a3f7b506ed8b535006eabfa6be4cd36909edbb18cb841d5fd5a191792331d6d078d544f9ad3f265845991e58bf37729b4dd11aa0c1d8947f6bdbf11f3
 https://stable.dl2.discordapp.net/apps/linux/0.0.106/discord-0.0.106.deb 5eeba2fd2f15e35205396e76f171ab4a3883465b1089f01e32e0d283b7ce7d19ba80c41dd68853bf9592a986ec3748cb4a9b50568c9364e6299c93595580ab71
@@ -37,3 +39,4 @@ https://stable.dl2.discordapp.net/apps/linux/0.0.112/discord-0.0.112.deb a28d5ee
 https://stable.dl2.discordapp.net/apps/linux/0.0.113/discord-0.0.113.deb 4b33c45c9a0135fcb68e490ecdac1d971e82c59f4f6d2159799aeacea0f82d545834d74e1c101a9d4054e49de185de8a5035787d8585cb0adf6730d4a2997909
 https://stable.dl2.discordapp.net/apps/linux/0.0.114/discord-0.0.114.deb 10415718b4ca2eb24f81eabf30052f4c7ace108a0af7e38dd2b869ac529cd0dc036233bdeeaee2d79856179b42a0369843bd3931f4e66fe61282558f9750af47
 https://stable.dl2.discordapp.net/apps/linux/0.0.115/discord-0.0.115.deb ea63eb8097662fbe667440b21666abf08b8e85435949b8e17318b0ec1a0c476931902aeb04c559b0e2d451ad36e6ba734f800e70da1cab6e1bb80ff186facaf7
+https://stable.dl2.discordapp.net/apps/linux/0.0.116/discord-0.0.116.deb 4ed0c3566d26e8886ab443af12a0be2110b9dd75d3d89c120163d4bdf80c5bdc0d7d94b83841d2ded48946b5511c37ad33a92027a13da105b6252de4af465a49
