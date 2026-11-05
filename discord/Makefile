@@ -10,7 +10,8 @@ VERSION:=$(shell echo "$(URL_DEB)" | awk -F/ '{print $$(NF-1)}')
 DEB:=discord_$(VERSION)_$(ARCH).deb
 
 URL_RPM:=$(shell wget --server-response --max-redirect=0 -qO- "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=linux&arch=x64&format=rpm" 2>&1 | grep -iE '^\s*location:' | awk '{print $$NF}' | tail -1)
-RPM:=$(shell basename "$(URL_RPM)")
+# RPM-style package name: discord_<version>.x86_64 (Discord builds the rpm for x86_64)
+RPM:=discord_$(VERSION).x86_64.rpm
 
 out/$(DEB):
 	@mkdir -p out/
