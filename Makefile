@@ -200,6 +200,7 @@ $(RPM_OUT_REPO):
 
 $(OUT_RPMS): $(RPMS) | $(RPM_OUT_REPO)
 	cp $(shell find $(RPM_LOCAL_REPO_PATH) -name `basename $@`) $@
+	rpmsign --delsign $@ 2>/dev/null || true
 	rpmsign --addsign --key-id=$(GPG_KEY) $@
 
 rpm_sign: $(OUT_RPMS)
