@@ -1,13 +1,13 @@
 DIST ?= any
 ARCH ?= amd64
 
-ifneq (,$(findstring deb,$(MAKECMDGOALS)))
+# Recover download URLs from Slack's linux download instructions pages
+# https://slack.com/intl/en-ie/downloads/instructions/linux?ddl=1&build=deb|rpm
 URL_DEB:=$(shell wget -qO- https://slack.com/intl/en-ie/downloads/instructions/linux\?ddl\=1\&build\=deb | sed -n 's|.*src="\(https://downloads.slack-edge.com/desktop-releases/linux/[^"]*\)".*|\1|p')
 DEB:=$(shell basename "$(URL_DEB)")
-else
+
 URL_RPM:=$(shell wget -qO- https://slack.com/intl/en-ie/downloads/instructions/linux\?ddl\=1\&build\=rpm | sed -n 's|.*src="\(https://downloads.slack-edge.com/desktop-releases/linux/[^"]*\)".*|\1|p')
 RPM:=$(shell basename "$(URL_RPM)")
-endif
 
 out/$(DEB):
 	@mkdir -p out/
@@ -28,12 +28,12 @@ out/$(RPM):
 	@wget --show-progress $(URL_RPM) -O out/$(RPM)
 	@echo "$(URL_RPM) `sha512sum out/$(RPM) | cut -d' ' -f1`" >out/rpm.href
 
-../out/RPM.$(DIST).$(ARCH)/raw/$RPM): out/$(RPM)
+../out/rpm.$(DIST).$(ARCH)/raw/$(RPM): out/$(RPM)
 	@mkdir -p ../out/rpm.$(DIST).$(ARCH)/raw
 	@cp out/$(RPM) ../out/rpm.$(DIST).$(ARCH)/raw/$(RPM)
 
 .PHONY: rpm_chroot
-rpm_chroot:  ../out/RPM.$(DIST).$(ARCH)/raw/$RPM)
+rpm_chroot: ../out/rpm.$(DIST).$(ARCH)/raw/$(RPM)
 
 .PHONY: clean
 clean:
